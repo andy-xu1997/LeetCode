@@ -8,12 +8,15 @@ def countAndSay(n):
     count = 0 #用来计数
     while (n != 0 ):    #当数字没有递减到0 的时候程序一直运行
         t = n // (10 ** (length-1)) # t 是用来记录现在最高位的数字 并且跟之前的最高位进行判断
-        count +=1
+        count += 1
 
-        if
+        if n:
+            array.append()
         array.append(t)
-        n = n - t *(10 ** (length-1))
-        length -=1
+
+
+        n = n - t * (10 ** (length-1))
+        length -= 1
 
     print(array)
 
