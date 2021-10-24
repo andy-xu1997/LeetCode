@@ -1,26 +1,29 @@
 #分析 ：想用数学的方式来解决这个问题 获取到输入的数字后 分析数字的长度length 之后
 
 
-n = 112233445566
 def countAndSay(n):
-    array = [] #数组 用来记录算出的结果 最后输出
-    length = len(str(n)) #输入数字的长度
-    count = 0 #用来计数
-    while (n != 0 ):    #当数字没有递减到0 的时候程序一直运行
-        t = n // (10 ** (length-1)) # t 是用来记录现在最高位的数字 并且跟之前的最高位进行判断
-        count += 1
+    res = "1"
+    if n == 1:
+        return res
 
-        if n:
-            array.append()
-        array.append(t)
+    for i in range(2, n + 1):
+        l, r = 0, 0
+
+        temp = ""
+        # 外层while控制循环完这一层的数字，如"1211"
+        while r < len(res):
+            # 这层while控制把相同的数字都遍历完
+            while r < len(res) and res[l] == res[r]:
+                r += 1
+
+            curr_len = r - l
+            temp += str(curr_len) + res[l]
+            l = r
+
+        res = temp
+    print(res)
+    return temp
 
 
-        n = n - t * (10 ** (length-1))
-        length -= 1
 
-    print(array)
-
-
-
-
-countAndSay(n)
+countAndSay(5)
