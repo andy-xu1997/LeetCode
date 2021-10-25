@@ -1,6 +1,4 @@
 
-
-
 def countAndSay(n):
     res = "1"
     if n == 1:
